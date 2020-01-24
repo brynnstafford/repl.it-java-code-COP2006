@@ -1,0 +1,74 @@
+Brynn Stafford
+Creating yhatzee with class
+
+
+
+import java.util.Random;
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    /** This is a javadoc (we'll do more with them later)
+     *  Create a random number (using the built-in util)
+     *  For class, we will build this as our first project:
+     *  - part 1: Break down the problem
+     *   make some psuedocode/flowcharts
+     *   create variables for the first part (intro Scanner & instance variables)
+     */
+    Random rand = new Random();
+    Scanner scan = new Scanner(System.in);
+
+    System.out.println(rand.nextInt(6)+1); // Just to show how random works
+    
+    // Get usernames 
+    System.out.print("Welcome to Yahtzee!!");
+    System.out.print("\nPlease Enter player 1's name: ");
+    String playerOne = scan.nextLine();
+    System.out.print("Hello, " + playerOne + ". \nPlease give player 2's name: " );
+    String playerTwo = scan.nextLine();
+    System.out.print("Hello, " + playerTwo + ". \nLet's get started!");
+    
+    // Initializing dice variables and who rolls first (properties)
+    
+    int p1DieOne = rand.nextInt(6) +1;
+    int p1DieTwo = rand.nextInt(6) +1;
+    int p1DieThree = rand.nextInt(6) +1;
+    int p1DieFour = rand.nextInt(6) +1;
+    int p1DieFive = rand.nextInt(6) +1;
+
+    int p2DieOne = rand.nextInt(6) +1;
+    int p2DieTwo = rand.nextInt(6) +1;
+    int p2DieThree = rand.nextInt(6) +1;
+    int p2DieFour = rand.nextInt(6) +1;
+    int p2DieFive = rand.nextInt(6) +1;
+
+    // summing player 1's dice roll
+
+    System.out.println("\n______\n" + playerOne + "'s dice are: " + p1DieOne + ", " + p1DieTwo + ", " + p1DieThree + ", " + p1DieFour + ", " + p1DieFive);
+
+    int p1rollOne = (p1DieOne + p1DieTwo + p1DieThree + p1DieFour + p1DieFive);
+
+    System.out.print("Total = " + p1rollOne);
+
+    // summing player 2's dice roll
+
+    System.out.println("\n______\n" + playerTwo + "'s dice are: " + p2DieOne + ", " + p2DieTwo + ", " + p2DieThree + ", " + p2DieFour + ", " + p2DieFive);
+
+    int p2rollOne = (p2DieOne + p2DieTwo + p2DieThree + p2DieFour + p2DieFive);
+
+    System.out.print("Total = " + p2rollOne);
+
+    //If statemement: who rolls first
+
+    if (p1rollOne > p2rollOne) { 
+      System.out.println("\n" + playerOne + " goes first.");
+
+    else if (p1rollOne < p2rollOne) {
+      System.out.println("\n______\n" + playerTwo + " goes first.");
+    } 
+    else { 
+      System.out.println("\n______\n" + "Both player's re-roll die.");
+    }
+    
+  }
+}
