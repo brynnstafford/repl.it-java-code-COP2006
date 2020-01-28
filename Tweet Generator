@@ -1,0 +1,97 @@
+// Brynn Stafford
+// Tweet Generator
+// COP 2006
+// Prof. Greenwell
+// 01/27/2020
+
+Problem: 
+Twitter is just too mean lately. So we're going to make a Tweet generator which asks a user for their handle and sends a tweet (through System.out) based on their favorite hobby, weather, and phrase.
+
+Input: 
+Create variables to hold input from the user (Scanner) based on the following questions (make sure to convert input to lowercase):
+
+"What is your handle?" (any String)
+"What is your favorite hobby?" (any String)
+"Which of these is your favorite type of weather?
+1. Rainy
+2. Sunny
+3. Snowy
+4. Cloudy" (an int which you turn into a string based on their choice, note the spacing)
+* You can assume the int choice will be in range (we will alter this later)
+"My favorite phrase is: " (any String)
+
+Output:
+The base template for the print is: "<handle> I hope you have a <weather> day, <see action below> in your <see startswith below>  <hobby> #<first 5 letters of phrase>"
+
+With phrase: "Living on the edge" would become "#livin"
+
+Action
+If the hobby is basketball, baseball, soccer, volleyball, or tennis: 
+action will be "scoring"
+If "video games", golf, or chess:
+action will be "playing"
+Anything else
+action will be "participating"
+
+Startswith: if the hobby starts with the letter s: add "#super" here
+
+
+
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+    Scanner inp = new Scanner(System.in);
+
+  	System.out.println("What is your handle?:");
+  	String handle = scan.nextLine();
+  	System.out.println("What is your favorite hobby?:");
+  	String hobby = scan.nextLine();
+  	System.out.println("Which of these is your favorite type of weather?:\n1. Rainy\n2. Sunny\n3. Snowy\n4. Cloudy");
+  	int weatherQue = scan.nextInt();
+  	System.out.println("My favorite phrase is:");
+    /* wouldnt run without 'Scanner inp = new Scanner(System.in);' and
+    *  'String phrase = inp.nextLine();' for phrase input??
+    */
+    String phrase = inp.nextLine();
+  	
+  	// action - (if hobby is _ then action is _)
+  	String action = hobby;
+    switch (action) {
+      case "basketball": case "baseball": case "soccer":case "volleyball": case "tennis":
+        action = "scoring";
+        break;
+      case "video games": case "golf": case "chess":
+        action = "playing";
+        break;
+      default:
+        action = "participating";
+  	  }
+
+    // weatherAns - (converting weather int to weather str)
+    String weatherAns;
+    switch (weatherQue) {
+      case 1: 
+        weatherAns = "rainy";
+        break;
+      case 2:
+        weatherAns = "sunny";
+        break;
+      case 3: 
+        weatherAns = "snowy";
+        break;
+      case 4:
+        weatherAns = "cloudy";
+        break;
+      default:
+        weatherAns = "invalid number";
+    }
+    
+  	// if/else hobby startswith 's', if phrase lenghth in range, & print
+  	if (hobby.startsWith("s") && phrase.length() > 4) {
+  	  System.out.println(handle.toLowerCase() + " I hope you have a " + weatherAns + " day, " + action + " in your " + "#super" + " " + hobby.toLowerCase() + " #" + phrase.substring(0,5).toLowerCase());
+  	}else {
+  	  System.out.println(handle.toLowerCase() + " I hope you have a " + weatherAns + " day, " + action + " in your " + hobby.toLowerCase() + " #" + phrase.substring(0,5).toLowerCase());
+  	}
+  	  }
+  }
