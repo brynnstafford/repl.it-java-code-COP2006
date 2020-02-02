@@ -2,7 +2,7 @@ Brynn Stafford
 using google java style guide for standard formatting
 
 
-1st Assignment - Say No to Hello World
+(1)1st Assignment - Say No to Hello World
 This isn't our first rodeo, so I'm not going to insult anyone with hello world:
 
 Instead print out the following pattern:
@@ -25,7 +25,7 @@ class Main {
 }
 
 
-Variable Assignment:
+(2)Variable Assignment:
 When we create a variable we also assign it (no matter what)
 The above (or something near it) was stated in class, consider what happens when we just "create" a variable without assigning it? (hint: print it). Then complete the following assignment:
 
@@ -45,7 +45,7 @@ class Main {
 }
 
 
-Assign and Create 2
+(3)Assign and Create 2
 
 For you to do:
 Create a String variable called "name" and set it to "Chen"
@@ -67,7 +67,7 @@ class Main {
 }
 
 
- The variable "num" holds an integer user input
+(4)The variable "num" holds an integer user input
 Write a conditional statement starting on line 9 that does the following:
 If num is positive, print "__ is positive"
 If num is negative, print "__ is negative"
@@ -99,7 +99,7 @@ class Main {
 }
 
 
-MUST USE SWITCH STATEMENT
+(5)MUST USE SWITCH STATEMENT
   The variable "name" holds a String user input 
 
 Write a conditional statement starting on line 9 that does the following:
@@ -147,7 +147,7 @@ class Main {
 }
 
 
-Given a String (already declared for you as str), do the following:
+(6)Given a String (already declared for you as str), do the following:
 Print out the following: "The first 3 letters of ___ is ___"
 
 For example, if the input is "banana", your output should be "The first 3 letters of banana is ban"
@@ -168,6 +168,98 @@ class Main {
   	  System.out.println("The first 3 letters of " + str + " is " + str.substring(0,3));
   	}
 
+  }
+}
+
+
+(7)Given three variables:
+String str
+int start
+int end
+
+Print out the following string:
+
+The substring of (str) from (start) to (end) is (substring from start to end, inclusive)
+
+Sample output:
+In: lolwut
+Start: 2
+End: 4 
+The substring of lolwut from 2 to 4 inclusive is lwu
+ 
+PLEASE NOTE that we are counting the end index in our output!
+
+lolwut
+012345
+
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+  	Scanner inp = new Scanner(System.in);
+  	System.out.print("In:");
+  	String str = inp.nextLine();
+  	System.out.print("\nStart:");
+  	int start = inp.nextInt();
+  	System.out.print("\nEnd:");
+  	int end = inp.nextInt();
+    // Printing range of characters from input
+  	System.out.println("\nThe substring of " + str + 
+  	" from " + start + " to " + end + " inclusive is " + str.substring(start,end + 1));
+  }
+}
+
+
+(8)On line 5, declare an integer array of size 5 and assign the values 10, 20, 30, 40, and 50 to it.
+
+Then use a for loop to print out all the elements of the array, one per line.
+  
+class Main
+{
+	public static void main(String[] args)
+	{
+	  //declaring int arrays and assigning values to array
+	  int [] array;
+	  array = new int [5];
+	  array[0] = 10;
+	  array[1] = 20;
+	  array[2] = 30;
+	  array[3] = 40;
+	  array[4] = 50;
+	  for (int i = 0; i < array.length; i++)
+	  {
+	    System.out.println(array[i]);
+	  }
+	}
+}
+
+(9)Inputs:
+int end;
+
+Write a for loop that will print out the numbers starting at 1 and ending at the input inclusive.  The numbers printed should all be on the same line separated by a space.
+
+Sample inputs/outputs:
+In: 5
+1 2 3 4 5
+
+In: 10
+1 2 3 4 5 6 7 8 9 10
+
+In: -5
+
+(no output)
+  
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner inp = new Scanner(System.in);
+    System.out.print("In:");
+    int end = inp.nextInt();
+    //Printing 1 through input number on separate line
+    for (int i = 1; i < end + 1; i += 1) {
+      System.out.println(i);
+    }
   }
 }
 
