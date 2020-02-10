@@ -203,6 +203,7 @@ class Main {
   	" from " + start + " to " + end + " inclusive is " + str.substring(start,end + 1));
   }
 }
+TEACHER COMMENTS "Try running "oj" with 1 & 3 (you'll get an exception - should check to see that end is greater than length)."
 
 
 
