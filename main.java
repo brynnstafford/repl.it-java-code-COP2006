@@ -263,10 +263,42 @@ class Main {
   }
 }
 
+##### Assignment 10: Fibonacci Loop
+
+The fibonacci sequence is a sequence of numbers in which the next number is the sum of the previous two numbers.
+
+The first two numbers of the fibonacci sequence are 0, 1.
+
+The first 8 numbers of the fibonacci sequence are 0, 1, 1, 2, 3, 5, 8, 13
+
+Write some code to print out the first X numbers of the fibonacci sequence.
+
+Your output should be on one line, with each number separated by a space.  You may assume that x is at least 2.
 
 
+import java.util.Scanner;
 
-
+class Main {
+  public static void main(String[] args) {
+    Scanner inp = new Scanner(System.in);
+    System.out.print("In:");
+    int x = inp.nextInt();
+   	// Assigning first two fibonacci int values (f1 & f2)
+   	int f1 = 0, f2 = 1;
+   	
+   	// While loop condition states loop must start at f1 
+   	// & input must be greater than f1
+   	int i = 1;
+   	while(i <= x){
+   	  // Looping f1 until inp-x while satisfying conditions
+   	  System.out.print(f1 + " ");
+   	  int fibonacciSum = f1 + f2;
+   	  f1 = f2;
+   	  f2 = fibonacciSum;
+   	  i++;
+   	}
+  }
+}
 
 
 
