@@ -1,0 +1,127 @@
+(1) Mystery Method
+Complete the mystery method so that it takes in an integer array as a parameter, and then modifies each element based on whether it's even or odd.  If the number is even, divide it by 2.  If it's odd, multiply it by 10.
+
+class Main{
+	public static void main(String[] args){
+	  // assign & initialize an int array
+		int[] a = {1,2,3,4,5};
+		// send array to function "mystery"
+		mystery(a);
+		// for "each" over each element of array
+		for(int e : a){
+      if (e % 2 == 0){
+        System.out.print(e / 2 + " ");
+      }
+      else{
+        System.out.print(e * 10 + " ");
+      }
+		}
+		// should print out 10 1 30 2 50
+	}
+	public static void mystery(int[] array){
+	  // C-style for ("for") modifying array with index
+	  for (int i = 0; i < 5 ; i++) {
+	    //array[i] = array[i] + 2;
+	    array[i] += 0;
+	  }
+	}
+}
+
+
+(2)Finish the method
+ Write a method header on line two with the following specs:
+
+Returns: a String
+Name: makeCapital
+Parameters: a String named "name"
+
+You should not be writing code on any line other than #2
+
+class Main {
+	public static String makeCapital(String name)
+	{
+		return name.toUpperCase();
+
+	}
+	//test case below (dont change):
+	public static void main(String[] args){
+		System.out.println(makeCapital("test"));
+	}
+}
+
+
+(3)Create a method
+ Write a method header on line two with the following specs:  
+
+Returns: a String
+Name: makeThreeSubstr
+Parameters:
+a String called "word"
+an integer called "startIndex"
+an integer called "endIndex"
+
+Then, starting on line 4, write code that will return 3x the substring (no spaces) from "startIndex" to "endIndex"
+
+Examples:
+makeThreeSubstr("hello",0,2) ==> "hehehe"
+makeThreeSubstr("shenanigans",3,7) ==> "naninaninani"
+
+class Main {
+	public static String makeThreeSubstr(String word, int startIndex, int endIndex)
+	{
+	  /* can't do 'return substr * 3;' becasue * is a binary operator
+	  * adding the string concatenates the strings
+	  * can put + " " + to separate words
+	  */
+		String substr = word.substring(startIndex,endIndex);
+		return substr + substr + substr;
+	}
+	//test case below (dont change):
+	public static void main(String[] args){
+		System.out.println(makeThreeSubstr("hello",0,2)); //should be hehehe
+		System.out.println(makeThreeSubstr("shenanigans",3,7)); //should be naninaninani
+	}
+}
+
+
+(4)Accumulator Method
+Write a method header on line two with the following specs:    
+
+Returns:
+a String
+Name:
+censorLetter
+Parameters:
+a String called s
+a char called ch
+
+Then complete the method by programming the following behavior
+Replace all instances of ch with a "*" within the String s.
+See below examples.
+
+Examples:
+censorLetter("computer science",'e') ==> "comput*r sci*nc*"
+censorLetter("trick or treat",'t') ==> "*rick or *rea*"
+
+class Main {
+	public static String censorLetter(String s, char ch)
+	{
+	  // return (not returnAll), must be ' ' for char
+	  // replacing ch (given below) w/ * for letter (given below)
+	  return s.replace(ch,'*');
+	}
+	//test case below (dont change):
+	public static void main(String[] args){
+		System.out.println(censorLetter("computer science",'e')); //"comput*r sci*nc*"
+		System.out.println(censorLetter("trick or treat",'t')); //"*rick or *rea*"
+	}
+}
+
+(5)
+
+
+
+
+
+
+
