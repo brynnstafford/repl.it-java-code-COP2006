@@ -1,0 +1,52 @@
+Brynn Stafford
+2/24/2020
+Creating methods
+
+//ShoppingCart & Inventroy Control
+
+
+class Main {
+  public static void main(String[] args) {
+    // Make an instance of the object
+    ShoppingCart cart = new ShoppingCart();
+    // Use the class as a type and make a "new" variable (instance variable)
+    //                 a class type == object
+
+    cart.addToCart("chocolate", 3.45);
+    System.out.println(cart.totalPrice);
+  }
+}
+
+
+//Shopping Cart method
+public class ShoppingCart { 
+  /* 
+  How you described this class to a fellow team-mate
+  */ 
+
+  // Class variables (fields) defined here
+  /* totalPrice is the total price of the items */ 
+  double totalPrice = 0.00;
+
+  // Build constructor - public <ClassName>(parameters) {}
+
+  public ShoppingCart() {} // this is default and already made
+
+  // Typical constructor
+  public ShoppingCart(float startingPrice) {
+    // Set starting price by reassigning to total
+    totalPrice = startingPrice;
+  }
+
+  // Finally build your methods
+  public void addToCart(String item, double price) {
+    // Prints item added to cart and adds to price
+    System.out.println("Item: " + item + " :Added to cart");
+    totalPrice += price;
+
+  }
+
+
+
+
+}
