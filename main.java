@@ -266,7 +266,6 @@ class Main {
 
 
 ##### Assignment 10: Fibonacci Loop
-
 The fibonacci sequence is a sequence of numbers in which the next number is the sum of the previous two numbers.
 
 The first two numbers of the fibonacci sequence are 0, 1.
@@ -300,8 +299,59 @@ class Main {
 }
 
 
+##### Assignment 11: Loops with Methodology
+Complete the minVowels method so that given the array words, it will return the word with the least number of vowels - if there are two or more words with the same number of vowels, it should return the shortest word.
 
+You may find it helpful to write a helper method called countVowels that uses an accumulator algorithm to count the vowels.
 
+Included is a separate helper function that will tell you if something is a vowel or not.
+	
+class Main
+{
+  // prints word with least num of vowels
+	public static void main(String[] args) 
+	{
+		String[] arr = {"hey","yolo","hi","this is long"};
+		System.out.println(minVowels(arr));
+		//should print "hi"
+	}
+	// returns shortest word with least num of vowels
+	public static String minVowels(String[] words)
+	{
+	  String shortestWord = "testing";
+		int vowels = 5;
+		for (int i = 0; i < words.length; i++) {
+			int vowel = countVowels(words[i]);
+			if (vowel <= vowels) {
+				if (words[i].length() < shortestWord.length()) {
+					shortestWord = words[i];
+					vowels = countVowels(words[i]);
+				}
+			}
+		}
+		return shortestWord;
+	}
+	// counts many vowels in word
+	public static int countVowels(String s)
+	{
+		int count = 0;
+		for (int i = 0; i < s.length(); i++) {
+			if (isVowel(s.charAt(i))) {
+				count++;
+			}
+		}
+		return count;
+	}
+	// determines what the vowels are
+	public static boolean isVowel(char ch)
+	{
+		return ch == 'a' ||
+			   ch == 'e' ||
+			   ch == 'i' ||
+			   ch == 'o' ||
+			   ch == 'u';
+	}
+}
 
 
 
