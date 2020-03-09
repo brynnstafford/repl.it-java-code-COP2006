@@ -1,4 +1,4 @@
-Main.java
+*****Main.java
 class Main {
 	public static void main(String[] args) {
 		
@@ -16,7 +16,7 @@ class Main {
 
 
 
-Stock.java
+*****Stock.java
 public class Stock {
   
   // variables/states (should be private)
@@ -64,24 +64,49 @@ public class Stock {
 	  return companyName;
 	}
 	
+	
+	
+	
+	// This method will change the price by change (change can be positive or negative). It should also recalculate percentChange and marketCap.percentChange represents the percentage changed
+  
+  //protected void adjustPrice(int change);
+  
+  
+  // AHHH LEFT OFF HERE EVERYTHING BELOW NEEDS TO BE REDONE
+  // setter (void type, sets the new price value)
+  protected void adjustPrice(int change) {
+	  // checks new price and then assigns the value
+	  if (change > 0.1 && change <= 4.0) {
+	    this.price = change;
+	  }	else {
+	    this.price = 1.0;
+	  }
+	}
+	protected double getPrice() {
+	  // getter: type is the same as return type and returns current value
+	  return price;
+	}
+
+	
+	
 	// Set price
-	protected void changePrice(int new_price) {
-	  this.price = new_price;
+	protected void adjustPrice(int change) {
+	  this.price = change;
+	  this.percentChange = change;
+	  this.marketCap = change;
 	}
 	// Get price
 	protected int getPrice() {
 	  return price;
 	}
+	// Get percent change
+	protected int getPercentChange() {
+	  return percentChange;
+	}
+	// Get market Cap
+	protected 
 	
-	
-	
-	
-	
-  
-  
-  // This method will change the price by change (change can be positive or negative). It should also recalculate percentChange and marketCap.percentChange represents the percentage changed
-  
-  //protected void adjustPrice(int change);
+
   
   
   
