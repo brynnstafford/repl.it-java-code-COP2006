@@ -27,6 +27,7 @@ public class Stock {
   private int totalShares;
   private long marketCap;
   
+  
   // constructor (default is public)
   
   public Stock(String atickerSymbol, String acompanyName, int aprice) {
@@ -40,10 +41,55 @@ public class Stock {
     this.marketCap = totalShares * price; //is calculated by multiplying totalShares by price
   }
   
+  
   // methods (default is protected)
+  // setters(change) and getters
+  
+  // Set name of ticker symbol
+	protected void changeTickerSymbol(String new_tickerSymbol) {
+	  this.tickerSymbol = new_tickerSymbol;
+	}
+	// Get name of ticker symbol
+	protected String getTickerSymbol() {
+	  return tickerSymbol;
+	}
+	
+	
+	// Set name of company
+	protected void changeCompanyName(String new_companyName) {
+	  this.companyName = new_companyName;
+	}
+	// Get name of company
+	protected String getCompanyName() {
+	  return companyName;
+	}
+	
+	// Set price
+	protected void changePrice(int new_price) {
+	  this.price = new_price;
+	}
+	// Get price
+	protected int getPrice() {
+	  return price;
+	}
+	
+	
+	
+	
+	
+  
   
   // This method will change the price by change (change can be positive or negative). It should also recalculate percentChange and marketCap.percentChange represents the percentage changed
-  protected void adjustPrice(int change);
+  
+  //protected void adjustPrice(int change);
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   /* This method should return a SINGLE String (using \n) that represents something like the following:
@@ -52,14 +98,9 @@ public class Stock {
     Current Price: $802 (+7.2%)
     Market Cap: $538000000000
   */
-  protected String toString();
+  
+  //protected String toString();
   
   
 }
-
-
-
-
-
-
 
