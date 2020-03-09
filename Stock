@@ -1,17 +1,22 @@
 Main.java
-
 class Main {
 	public static void main(String[] args) {
 		
-		Stock google = new Stock("GOOG", "Google, Inc.", $802 (+7.2%), $538000000000);
-		System.out.println("TickerSymbol: " + google.getTickerSymbol()\n + "Company: " + google.getCompanyName()\n + "Current Price: " + getPrice() + percentChange\n + "Market Cap: " + marketCap);
+		Stock google = new Stock("goog", "Google, Inc.", 802);
+		// Use \n in print statement. Separating for less confusion rn
+		System.out.println("TickerSymbol: " + google.getTickerSymbol());
+		System.out.println("Company: " + google.getCompanyName());
+		System.out.println("Current Price: " + google.getPrice() + " " + google.getPercentChange());  
+		System.out.println("Market Cap: " + google.getMarketCap());
+		
+		//System.out.println("TickerSymbol: " + google.getTickerSymbol()\n + "Company: " + google.getCompanyName()\n + "Current Price: " + google.getPrice() + " " + percentChange\n + "Market Cap: " + marketCap);
 		
 	}
 }
 
 
-Stock.java
 
+Stock.java
 public class Stock {
   
   // variables/states (should be private)
@@ -50,14 +55,7 @@ public class Stock {
   protected String toString();
   
   
-
 }
-
-
-
-
-
-
 
 
 
