@@ -1,0 +1,67 @@
+Main.java
+
+class Main {
+	public static void main(String[] args) {
+		
+		Stock google = new Stock("GOOG", "Google, Inc.", $802 (+7.2%), $538000000000);
+		System.out.println("TickerSymbol: " + google.getTickerSymbol()\n + "Company: " + google.getCompanyName()\n + "Current Price: " + getPrice() + percentChange\n + "Market Cap: " + marketCap);
+		
+	}
+}
+
+
+Stock.java
+
+public class Stock {
+  
+  // variables/states (should be private)
+  private String tickerSymbol;
+  private String companyName;
+  private int price;
+  private double percentChange;
+  private int totalShares;
+  private long marketCap;
+  
+  // constructor (default is public)
+  
+  public Stock(String atickerSymbol, String acompanyName, int aprice) {
+    
+    this.tickerSymbol = atickerSymbol.toUpperCase(); //(and convert the string to uppercase)
+    this.companyName = acompanyName;
+    this.price = aprice;
+    this.totalShares = 0;
+    
+    this.percentChange = 0.0; //should default to zero.
+    this.marketCap = totalShares * price; //is calculated by multiplying totalShares by price
+  }
+  
+  // methods (default is protected)
+  
+  // This method will change the price by change (change can be positive or negative). It should also recalculate percentChange and marketCap.percentChange represents the percentage changed
+  protected void adjustPrice(int change);
+  
+  
+  /* This method should return a SINGLE String (using \n) that represents something like the following:
+    Ticker Symbol: 
+    GOOGCompany: Google, Inc.
+    Current Price: $802 (+7.2%)
+    Market Cap: $538000000000
+  */
+  protected String toString();
+  
+  
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
