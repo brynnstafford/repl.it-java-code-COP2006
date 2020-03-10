@@ -2,7 +2,8 @@
 class Main {
 	public static void main(String[] args) {
 	  
-	  System.out.println(toString);
+	  
+	  System.out.println();
 	  
 	  
 	  //Stock google = new Stock("goog", "Google, Inc.", 802);
@@ -76,7 +77,6 @@ public class Stock {
     this.marketCap = (totalShares * change);
   }
   
-    
     /* 
     This method should return a SINGLE String (using \n) that represents something like the following:
       Ticker Symbol: GOOG
