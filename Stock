@@ -87,6 +87,6 @@ public class Stock {
   
   
 	public String toString() {
-	  return "TickerSymbol: " + .getTickerSymbol() + "\n" + "Company: " + .getCompanyName() + "\n" + "Current Price: $" + .getPrice() + " (+" + .getPercentChange() + "%)" + "\n" + "Market Cap: " + .getMarketCap();
+	  return "TickerSymbol: " + getTickerSymbol() + "\n" + "Company: " + getCompanyName() + "\n" + "Current Price: $" + getPrice() + " (+" + getPercentChange() + "%)" + "\n" + "Market Cap: " + getMarketCap();
 	  }
 }
