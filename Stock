@@ -1,19 +1,27 @@
 *****Main.java
 class Main {
 	public static void main(String[] args) {
+	  
+	   /* 
+    This method should return a SINGLE String (using \n) that represents something like the following:
+      Ticker Symbol: GOOG
+      Company: Google, Inc.
+      Current Price: $802 (+7.2%)
+      Market Cap: $538000000000
+  */
+  
+	  public String toString() {
+	    return ("TickerSymbol: " + .getTickerSymbol()\n + "Company: " + .getCompanyName()\n + "Current Price: $" + .getPrice() + " (+" + .getPercentChange() + "%)"\n + "Market Cap: " + .getMarketCap);
+	  }
 		
 		Stock google = new Stock("goog", "Google, Inc.", 802);
-		// Use \n in print statement. Separating for less confusion rn
-		System.out.println("TickerSymbol: " + google.getTickerSymbol());
-		System.out.println("Company: " + google.getCompanyName());
-		System.out.println("Current Price: " + google.getPrice() + " " + google.getPercentChange());  
-		System.out.println("Market Cap: " + google.getMarketCap());
+		System.out.println(toString);
 		
-		//System.out.println("TickerSymbol: " + google.getTickerSymbol()\n + "Company: " + google.getCompanyName()\n + "Current Price: " + google.getPrice() + " " + percentChange\n + "Market Cap: " + marketCap);
+		//int price = 10;
+		//System.out.println(price);
 		
 	}
 }
-
 
 
 *****Stock.java
@@ -30,102 +38,53 @@ public class Stock {
   
   // constructor (default is public)
   
-  public Stock(String atickerSymbol, String acompanyName, int aprice) {
+  public Stock(String atickerSymbol, String acompanyName, int aprice, int atotalShares) {
     
     this.tickerSymbol = atickerSymbol.toUpperCase(); //(and convert the string to uppercase)
     this.companyName = acompanyName;
     this.price = aprice;
-    this.totalShares = 0;
+    this.totalShares = atotalShares;
     
     this.percentChange = 0.0; //should default to zero.
-    this.marketCap = totalShares * price; //is calculated by multiplying totalShares by price
+    this.marketCap = (totalShares * price); //is calculated by multiplying totalShares by price
   }
   
-  
   // methods (default is protected)
-  // setters(change) and getters
   
-  // Set name of ticker symbol
-	protected void changeTickerSymbol(String new_tickerSymbol) {
-	  this.tickerSymbol = new_tickerSymbol;
-	}
-	// Get name of ticker symbol
-	protected String getTickerSymbol() {
+  // getters
+  protected String getTickerSymbol() {
 	  return tickerSymbol;
-	}
-	
-	
-	// Set name of company
-	protected void changeCompanyName(String new_companyName) {
-	  this.companyName = new_companyName;
-	}
-	// Get name of company
-	protected String getCompanyName() {
+  }
+  protected String getCompanyName() {
 	  return companyName;
-	}
-	
-	
-	
-	
-	// This method will change the price by change (change can be positive or negative). It should also recalculate percentChange and marketCap.percentChange represents the percentage changed
+  }
+  protected int getPrice() {
+	  return price;
+  }
+  protected int getTotalShares() {
+    return totalShares;
+  }
   
-  //protected void adjustPrice(int change);
+  protected double getPercentChange() {
+    return percentChange;
+  }
+  protected long getMarketCap() {
+    return marketCap;
+  }
   
+  // setters
+  protected void changeTickerSymbol(String new_tickerSymbol) {
+	  this.tickerSymbol = new_tickerSymbol;
+  }
+  protected void changeCompanyName(String new_companyName) {
+	  this.companyName = new_companyName;
+  }
   
-  // AHHH LEFT OFF HERE EVERYTHING BELOW NEEDS TO BE REDONE
-  // setter (void type, sets the new price value)
+  // This method will change the price by change (change can be positive or negative). It should also recalculate percentChange and marketCap.percentChange represents the percentage changed
   protected void adjustPrice(int change) {
-	  // checks new price and then assigns the value
-	  if (change > 0.1 && change <= 4.0) {
-	    this.price = change;
-	  }	else {
-	    this.price = 1.0;
-	  }
-	}
-	protected double getPrice() {
-	  // getter: type is the same as return type and returns current value
-	  return price;
-	}
-
-	
-	
-	// Set price
-	protected void adjustPrice(int change) {
-	  this.price = change;
-	  this.percentChange = change;
-	  this.marketCap = change;
-	}
-	// Get price
-	protected int getPrice() {
-	  return price;
-	}
-	// Get percent change
-	protected int getPercentChange() {
-	  return percentChange;
-	}
-	// Get market Cap
-	protected 
-	
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  /* This method should return a SINGLE String (using \n) that represents something like the following:
-    Ticker Symbol: 
-    GOOGCompany: Google, Inc.
-    Current Price: $802 (+7.2%)
-    Market Cap: $538000000000
-  */
-  
-  //protected String toString();
-  
+    this.price = price + change;
+    this.percentChange = ((change/price) - change) * 100;
+    this.marketCap = (totalShares * change);
+  }
   
 }
-
