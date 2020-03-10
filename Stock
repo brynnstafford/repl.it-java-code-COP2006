@@ -2,21 +2,10 @@
 class Main {
 	public static void main(String[] args) {
 	  
-	   /* 
-    This method should return a SINGLE String (using \n) that represents something like the following:
-      Ticker Symbol: GOOG
-      Company: Google, Inc.
-      Current Price: $802 (+7.2%)
-      Market Cap: $538000000000
-  */
-  
-	  public String toString() {
-	    return ("TickerSymbol: " + .getTickerSymbol()\n + "Company: " + .getCompanyName()\n + "Current Price: $" + .getPrice() + " (+" + .getPercentChange() + "%)"\n + "Market Cap: " + .getMarketCap);
-	  }
-		
-		Stock google = new Stock("goog", "Google, Inc.", 802);
-		System.out.println(toString);
-		
+	  System.out.println(toString);
+	  
+	  
+	  //Stock google = new Stock("goog", "Google, Inc.", 802);
 		//int price = 10;
 		//System.out.println(price);
 		
@@ -87,4 +76,17 @@ public class Stock {
     this.marketCap = (totalShares * change);
   }
   
+    
+    /* 
+    This method should return a SINGLE String (using \n) that represents something like the following:
+      Ticker Symbol: GOOG
+      Company: Google, Inc.
+      Current Price: $802 (+7.2%)
+      Market Cap: $538000000000
+  */
+  
+  
+	public String toString() {
+	  return "TickerSymbol: " + .getTickerSymbol() + "\n" + "Company: " + .getCompanyName() + "\n" + "Current Price: $" + .getPrice() + " (+" + .getPercentChange() + "%)" + "\n" + "Market Cap: " + .getMarketCap();
+	  }
 }
